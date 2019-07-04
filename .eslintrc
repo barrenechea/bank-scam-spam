@@ -1,0 +1,15 @@
+{
+  "extends": ["airbnb-base", "plugin:prettier/recommended"],
+  "rules": {
+    "prefer-destructuring": "off",
+    "array-callback-return": "off",
+    "no-param-reassign": "off",
+    "no-underscore-dangle": "off",
+    "class-methods-use-this": "off",
+    "no-console": "off",
+    "no-plusplus": "off"
+  },
+  "globals": {
+    "dsLogger": true
+  }
+}
