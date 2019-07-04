@@ -1,7 +1,7 @@
 {
   "name": "bank-scam-spam",
   "version": "0.0.1",
-  "description": "A simple (and quickly written) script for bank scam API's",
+  "description": "A simple (and quickly written) script for spamming bank scam API's.",
   "main": "index.js",
   "author": "Sebastián Barrenechea <sebastian@barrenechea.cl>",
   "license": "MIT",
