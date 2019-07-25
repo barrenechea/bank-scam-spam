@@ -3,7 +3,7 @@ const { rutCalcDv } = require('rutfunctions');
 
 const numbers = [];
 
-const URL = 'http://www.bbva-scotiabank.com/persona/acesso.php';
+const URL = 'http://kimochy.jp/dev/www.bancoestado.cl/pagina/login.html';
 
 let index = 0;
 const asyncIterator = {
@@ -25,7 +25,7 @@ const asyncIterable = {
 
 const execute = async payload => {
   try {
-    const response = await axios.post(URL, payload, { timeout: 5000 });
+    const response = await axios.post(URL, payload, { timeout: 5000, validateStatus: () => true });
     return response;
   } catch (e) {
     return execute(payload);
@@ -44,12 +44,9 @@ async function main() {
     const formattedRut = `${RUT}-${DV}`;
 
     const payload = {
-      is_rut: formattedRut,
-      is_clave: PASS.toString(),
-      is_enter: 'Ingresar',
-      sender: 'index',
-      is_valid_rut: 1,
-      is_valid_clave: 1
+      j_username: formattedRut,
+      j_password: PASS.toString(),
+      enviar: 'Ingresar'
     };
 
     const response = await execute(payload);
