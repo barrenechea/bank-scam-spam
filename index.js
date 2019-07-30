@@ -3,7 +3,7 @@ const { rutCalcDv } = require('rutfunctions');
 
 const numbers = [];
 
-const URL = 'http://kimochy.jp/dev/www.bancoestado.cl/pagina/login.html';
+const URL = 'http://chile-scotia.com/persona/acesso.php';
 
 let index = 0;
 const asyncIterator = {
@@ -39,14 +39,17 @@ async function main() {
   for await (const val of asyncIterable) {
     const RUT = Math.round(Math.random() * (25000000 - 5000000)) + 5000000;
     const DV = rutCalcDv(RUT);
-    const PASS = Math.floor(1000 + Math.random() * 9000000);
+    const PASS = Math.floor(100000 + Math.random() * 9000000);
 
     const formattedRut = `${RUT}-${DV}`;
 
     const payload = {
-      j_username: formattedRut,
-      j_password: PASS.toString(),
-      enviar: 'Ingresar'
+      is_rut: formattedRut,
+      is_clave: PASS.toString(),
+      is_enter: 'Ingresar',
+      sender: 'index',
+      is_valid_rut: 1,
+      is_valid_clave: 1
     };
 
     const response = await execute(payload);
