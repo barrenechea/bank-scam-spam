@@ -1,5 +1,5 @@
-const axios = require('axios');
-const { rutCalcDv } = require('rutfunctions');
+import axios from 'axios';
+import { rutCalcDv } from 'rutfunctions';
 
 const numbers = [];
 
@@ -23,11 +23,12 @@ const asyncIterable = {
   [Symbol.asyncIterator]: () => asyncIterator
 };
 
-const execute = async payload => {
+const execute = async (payload) => {
   try {
     const response = await axios.post(URL, payload, { timeout: 5000, validateStatus: () => true });
     return response;
   } catch (e) {
+    console.log('Error, retrying...');
     return execute(payload);
   }
 };
@@ -57,4 +58,4 @@ async function main() {
   }
 }
 
-main().catch(error => console.error(error.stack));
+main();

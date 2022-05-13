@@ -1,7 +1,0 @@
-# Ignore node_modules
-
-.nyc_output/**
-.vscode/**
-coverage/**
-node_modules/**
-temp/**
