@@ -8,13 +8,13 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git://github.com/SebastianBar/bank-scam-spam"
+    "url": "git://github.com/barrenechea/bank-scam-spam"
   },
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
-    "axios": "^0.27.2",
+    "axios": "^1.1.3",
     "rutfunctions": "^1.1.1"
   }
 }
